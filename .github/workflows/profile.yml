@@ -1,0 +1,46 @@
+name: Refresh profile dashboard
+
+on:
+  schedule:
+    - cron: '17 2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-visuals
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out profile source
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Test dashboard builder
+        run: python3 -m unittest discover -s scripts -p 'test_*.py'
+
+      - name: Generate Pac-Man animations
+        uses: abozanona/pacman-contribution-graph@v5.3.2
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          games: pacman
+
+      - name: Render dashboard cards
+        run: python3 scripts/render_dashboard.py --user "$GITHUB_REPOSITORY_OWNER" --output dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish profile visuals
+        uses: crazy-max/ghaction-github-pages@v5
+        with:
+          target_branch: output
+          build_dir: dist
+          commit_message: 'Refresh profile visuals'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
