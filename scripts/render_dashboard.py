@@ -236,6 +236,53 @@ def render_languages(snapshot, theme):
     return "".join(parts)
 
 
+def render_languages_mobile(snapshot, theme):
+    color = THEMES[theme]
+    languages = snapshot["languages"]
+    total = sum(value for _, value in languages)
+    top = languages[:5]
+    remainder = total - sum(value for _, value in top)
+    entries = top + ([("Other", remainder)] if remainder else [])
+    parts = [
+        svg_open(500, 515, f"Mobile language breakdown for {snapshot['username']}"),
+        f'<rect width="500" height="515" rx="20" fill="{color["background"]}"/>',
+        f'<rect x="6" y="6" width="488" height="503" rx="17" fill="{color["card"]}" '
+        f'stroke="{color["border"]}" stroke-width="2"/>',
+        f'<text x="25" y="49" fill="{color["text"]}" font-family="{FONT}" '
+        'font-size="26" font-weight="700">LANGUAGES IN PUBLIC REPOS</text>',
+    ]
+    if total:
+        for index, (name, value) in enumerate(entries):
+            y = 97 + index * 62
+            width = 450 * value / total
+            parts.extend(
+                [
+                    f'<circle cx="35" cy="{y - 9}" r="9" fill="{LANGUAGE_COLORS[index]}"/>',
+                    f'<text x="58" y="{y}" fill="{color["text"]}" '
+                    f'font-family="{FONT}" font-size="26">{escape(name[:20])}</text>',
+                    f'<text x="470" y="{y}" text-anchor="end" fill="{color["muted"]}" '
+                    f'font-family="{FONT}" font-size="26">{value / total:.0%}</text>',
+                    f'<rect x="25" y="{y + 14}" width="450" height="9" rx="4.5" '
+                    f'fill="{color["track"]}"/>',
+                    f'<rect x="25" y="{y + 14}" width="{width:.2f}" height="9" '
+                    f'rx="4.5" fill="{LANGUAGE_COLORS[index]}"/>',
+                ]
+            )
+    else:
+        parts.append(
+            f'<text x="250" y="250" text-anchor="middle" fill="{color["muted"]}" '
+            f'font-family="{FONT}" font-size="26">No language data yet</text>'
+        )
+    parts.extend(
+        [
+            f'<text x="25" y="482" fill="{color["muted"]}" font-family="{FONT}" '
+            f'font-size="19">Code size in non-fork repos  ·  @{escape(snapshot["username"])}</text>',
+            '</svg>',
+        ]
+    )
+    return "".join(parts)
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--user", required=True)
@@ -250,6 +297,7 @@ def main():
             ("hero", render_hero),
             ("stats", render_stats),
             ("languages", render_languages),
+            ("languages-mobile", render_languages_mobile),
         ):
             (args.output / f"{label}-{theme}.svg").write_text(
                 renderer(snapshot, theme), encoding="utf-8"

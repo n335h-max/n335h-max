@@ -1,7 +1,13 @@
 import unittest
 import xml.etree.ElementTree as ET
 
-from render_dashboard import build_snapshot, render_hero, render_languages, render_stats
+from render_dashboard import (
+    build_snapshot,
+    render_hero,
+    render_languages,
+    render_languages_mobile,
+    render_stats,
+)
 
 
 class DashboardTests(unittest.TestCase):
@@ -40,6 +46,9 @@ class DashboardTests(unittest.TestCase):
                 self.assertIn("example", svg)
             self.assertIn("APR 2025", render_stats(snapshot, theme))
             self.assertIn("TypeScript", render_languages(snapshot, theme))
+            mobile = render_languages_mobile(snapshot, theme)
+            self.assertIn("TypeScript", mobile)
+            self.assertEqual(ET.fromstring(mobile).tag, "{http://www.w3.org/2000/svg}svg")
 
     def test_languages_card_handles_empty_data(self):
         snapshot = build_snapshot(self.user, self.repos, {})

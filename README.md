@@ -33,6 +33,8 @@ I'm a student developer building practical web apps and AI-assisted tools. I enj
 - **Integrations:** WhatsApp · Telegram · AI APIs · Stripe
 
 <picture>
+  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/n335h-max/n335h-max/output/languages-mobile-dark.svg" />
+  <source media="(max-width: 600px) and (prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/n335h-max/n335h-max/output/languages-mobile-light.svg" />
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/n335h-max/n335h-max/output/languages-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/n335h-max/n335h-max/output/languages-light.svg" />
   <img src="https://raw.githubusercontent.com/n335h-max/n335h-max/output/languages-light.svg" alt="Share of programming language bytes across Navaneesh's non-fork public repositories" width="100%" />
