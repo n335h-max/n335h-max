@@ -42,7 +42,7 @@ I'm a student developer building practical web apps and AI-assisted tools. I enj
 
 ## Open source
 
-I proposed [BadKat 0.2.0: reliable patrol controls and verified Windows builds](https://github.com/X-DIABLO-X/badkat/pull/1). The pull request is open for review.
+I proposed [BadKat 0.2.0: reliable patrol controls and verified Windows builds](https://github.com/X-DIABLO-X/badkat/pull/1) to improve patrol controls and verify Windows builds.
 
 ## Notable projects
 
