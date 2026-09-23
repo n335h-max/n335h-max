@@ -22,7 +22,7 @@ jobs:
             dist/github-snake-dark.svg?palette=github-dark&color_snake=#5ce2d1&color_dots=#0e2031,#174356,#216c73,#2d9b96,#61d2bd
 
       - name: Publish animations
-        uses: crazy-max/ghaction-github-pages@v3.1.0
+        uses: crazy-max/ghaction-github-pages@v5
         with:
           target_branch: output
           build_dir: dist
