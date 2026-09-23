@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./assets/header.svg" width="100%" alt="Abstract teal path winding through a grid of glowing squares on a navy background" />
+  <img src="./assets/header.svg" width="100%" alt="A yellow Pac-Man character and a teal ghost facing each other in a navy maze" />
 </div>
 
 # Hi, I'm Navaneesh 👋
@@ -28,12 +28,12 @@ A crop planning MVP that brings together market prices, climate conditions, and 
 - **Backend & data:** Node.js · Express · Python · FastAPI · Supabase · SQLite
 - **Integrations:** WhatsApp · Telegram · AI APIs · Stripe
 
-## My contribution trail
+## My contribution arcade
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/n335h-max/n335h-max/output/github-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/n335h-max/n335h-max/output/github-snake.svg" />
-  <img src="https://raw.githubusercontent.com/n335h-max/n335h-max/output/github-snake.svg" alt="Animated snake moving across Navaneesh's GitHub contribution grid" width="100%" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/n335h-max/n335h-max/output/pacman-contribution-graph-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/n335h-max/n335h-max/output/pacman-contribution-graph.svg" />
+  <img src="https://raw.githubusercontent.com/n335h-max/n335h-max/output/pacman-contribution-graph.svg" alt="Animated Pac-Man game moving through Navaneesh's GitHub contribution grid" width="100%" />
 </picture>
 
 ## Let's connect
