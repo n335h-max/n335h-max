@@ -14,12 +14,12 @@ jobs:
     timeout-minutes: 10
     steps:
       - name: Generate light and dark animations
-        uses: Platane/snk/svg-only@v3
+        uses: Platane/snk@v3
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
-            dist/github-snake.svg?color_snake=#009f9a&color_dots=#eef9f8,#c9ece9,#8dd7d0,#43b5ad,#087c80
-            dist/github-snake-dark.svg?palette=github-dark&color_snake=#5ce2d1&color_dots=#0e2031,#174356,#216c73,#2d9b96,#61d2bd
+            dist/github-snake.svg
+            dist/github-snake-dark.svg?palette=github-dark
 
       - name: Publish animations
         uses: crazy-max/ghaction-github-pages@v5
