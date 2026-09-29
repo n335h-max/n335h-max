@@ -1,8 +1,3 @@
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/n335h-max/n335h-max/output/hero-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/n335h-max/n335h-max/output/hero-light.svg" />
-  <img src="https://raw.githubusercontent.com/n335h-max/n335h-max/output/hero-light.svg" alt="Welcome to Navaneesh Balakrishnan's GitHub hub: student developer building web apps and AI tools" width="100%" />
-</picture>
 
 # Navaneesh Balakrishnan
 
