@@ -53,7 +53,7 @@ I proposed [BadKat 0.2.0: reliable patrol controls and verified Windows builds](
       <h3>💬 whatsnq</h3>
       <p>A WhatsApp AI agent builder with business knowledge, conversation context, and a dashboard.</p>
       <p><strong>React · Node.js · Express</strong></p>
-      <p><a href="https://github.com/n335h-max/whatsnq">Source code</a></p>
+      <p><a href="https://github.com/n335h-max/whatsnq">Source code</a> &middot; <a href="https://whatsnq.vercel.app">Live site</a></p>
     </td>
   </tr>
   <tr>
